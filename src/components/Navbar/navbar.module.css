@@ -1,0 +1,27 @@
+.headerContainer {
+    width: 100%;
+    background-color: rgb(203, 248, 233);
+    display: flex;
+    justify-content: space-around;
+    border-bottom: dashed 1px rgb(245, 121, 142);
+}
+
+.headerContainer li {
+    display: inline-flex;
+    padding: 10px;
+    list-style: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+.headerContainer li a {
+    text-decoration: none;
+    color: black;
+}
+
+.headerContainer h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+    color:rgb(162, 97, 248);
+    font-weight: 500;
+}

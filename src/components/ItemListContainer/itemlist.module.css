@@ -1,0 +1,12 @@
+.bodyContainer {
+    display: flex;
+    justify-content: center;
+    border-bottom: dashed 1px rgb(245, 121, 142);
+}
+
+.bodyContainer h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    color:rgb(162, 97, 248);
+    font-weight: 500;
+}

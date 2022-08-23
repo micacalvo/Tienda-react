@@ -4,7 +4,7 @@ const CartWidget = () => {
     return (
         // Icono del carrito
 <div> 
-<FiShoppingCart/>
+<FiShoppingCart size={30}/>
 <span>4</span>
 </div>
 )
