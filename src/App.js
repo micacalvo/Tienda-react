@@ -1,21 +1,19 @@
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemCount from './components/ItemCount/itemCount';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter } from 'react-router-dom';
+
 
 const App = () => {
 
-const onAdd = () => {
-    alert("Has agregado un elemento al carrito")
-}
-
     return (
-        <>
+        <BrowserRouter>
          <Navbar/>
          <ItemListContainer saludo= "¡Bienvenidos a mi tienda!"/>
-         <ItemCount stock= {7} initial= {0} onAdd= {onAdd} />
-         <Footer/>
-        </>
+         <ItemDetailContainer/>
+        <Footer/>
+        </BrowserRouter>
     )
 }
 

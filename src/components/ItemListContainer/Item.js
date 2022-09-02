@@ -1,3 +1,5 @@
+import React from "react";
+
 const Item = (producto) => {
     return (
         <div>

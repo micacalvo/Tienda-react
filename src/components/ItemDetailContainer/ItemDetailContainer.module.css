@@ -1,0 +1,17 @@
+.itemDetailCont {
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.itemDetailCont p {
+    font-size: large;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: larger;
+    font-weight: 600;
+    color: blueviolet;
+}
