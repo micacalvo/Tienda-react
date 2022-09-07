@@ -5,7 +5,7 @@ const products = [
     description: "Cambiador con bolsillos",
     price: 200,
     stock: 10,
-    category: "Accesorios de bebés",
+    category: "Cambiadores",
     img: 'https://res.cloudinary.com/db6olsj8y/image/upload/v1661800694/Borreguito/CambiadorTela_g4pedr.jpg'
 },
 
@@ -15,17 +15,17 @@ const products = [
     description: "Colgante de tela con bolsillos",
     price: 400,
     stock: 10,
-    category: "Accesorios de bebés",
+    category: "Organizadores",
     img: 'https://res.cloudinary.com/db6olsj8y/image/upload/v1661800694/Borreguito/OrganizadorCuna_wkqxul.jpg'
 },
 
 {
     id: 3,
     title: "Baberos", 
-    description: "Baberos de tela con diseño y toalla",
+    description: "Baberos",
     price: 100,
     stock: 10,
-    category: "Accesorios de bebés",
+    category: "Baberos",
     img: 'https://res.cloudinary.com/db6olsj8y/image/upload/v1661800696/Borreguito/Baberos_wuvbou.jpg'
 },
 ];

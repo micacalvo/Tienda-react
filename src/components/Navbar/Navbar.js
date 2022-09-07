@@ -1,22 +1,24 @@
+import React from 'react';
 import CartWidget from './CartWidget';
 import estilos from './navbar.module.css';
+import {Link} from 'react-router-dom';
 
 const Navbar = () => {
     return ( 
 <nav className={estilos.headerContainer}>
-    <h3>MI BORREGUITO</h3>
+    <Link to='/'><h3>MI BORREGUITO</h3></Link>
       <ul>
         <li>
-            <a href="#">Sobre mí</a>
+            <Link to='/category/Cambiadores'>Cambiadores</Link>
         </li>
         <li>
-            <a href="#">Productos</a>
+            <Link to='/category/Organizadores'>Organizadores</Link>
         </li>
         <li>
-            <a href="#">Contacto</a>
+            <Link to='/category/Baberos'>Baberos</Link>
         </li> 
         </ul>
-        <CartWidget/>
+       <Link to='/cart'><CartWidget/></Link>
     </nav>
 )
 }

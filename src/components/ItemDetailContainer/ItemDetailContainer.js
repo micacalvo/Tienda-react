@@ -2,15 +2,19 @@ import products from "../../mock/products";
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import estilos from "./ItemDetailContainer.module.css";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
 
 const [product, setProduct] = useState({})
-    
+
+const {id} = useParams()
+const idNum = Number(id)   
+
 useEffect(() => {
     const getProduct = new Promise ((resolve, reject) => {
-    const productChoose =  products.find((prod) => prod.id === 1)
-    setTimeout(() => resolve(productChoose), 2000) 
+    const productFind =  products.find((prod) => prod.id === idNum)
+    setTimeout(() => resolve(idNum ? productFind : products), 500) 
 });
 
 getProduct
@@ -21,7 +25,7 @@ getProduct
 .catch((error) => {
     console.error(error)
 })
-}, [])
+}, [idNum])
 
 //console.log(product)
 return (
