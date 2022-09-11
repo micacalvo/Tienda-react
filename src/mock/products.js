@@ -5,7 +5,7 @@ const products = [
     description: "Cambiador con bolsillos",
     price: 200,
     stock: 10,
-    category: "Cambiadores",
+    category: "cambiadores",
     img: 'https://res.cloudinary.com/db6olsj8y/image/upload/v1661800694/Borreguito/CambiadorTela_g4pedr.jpg'
 },
 
@@ -15,7 +15,7 @@ const products = [
     description: "Colgante de tela con bolsillos",
     price: 400,
     stock: 10,
-    category: "Organizadores",
+    category: "organizadores",
     img: 'https://res.cloudinary.com/db6olsj8y/image/upload/v1661800694/Borreguito/OrganizadorCuna_wkqxul.jpg'
 },
 
@@ -25,7 +25,7 @@ const products = [
     description: "Baberos",
     price: 100,
     stock: 10,
-    category: "Baberos",
+    category: "baberos",
     img: 'https://res.cloudinary.com/db6olsj8y/image/upload/v1661800696/Borreguito/Baberos_wuvbou.jpg'
 },
 ];

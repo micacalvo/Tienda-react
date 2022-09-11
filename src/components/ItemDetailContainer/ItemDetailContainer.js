@@ -8,13 +8,13 @@ const ItemDetailContainer = () => {
 
 const [product, setProduct] = useState({})
 
-const {id} = useParams()
-const idNum = Number(id)   
+const {idProd} = useParams()
+//const idNum = Number(idProd)   
 
 useEffect(() => {
     const getProduct = new Promise ((resolve, reject) => {
-    const productFind =  products.find((prod) => prod.id === idNum)
-    setTimeout(() => resolve(idNum ? productFind : products), 500) 
+    const productFind =  products.find((prod) => prod.id === Number(idProd))
+    setTimeout(() => {resolve(idProd ? productFind : products);}, 2000);
 });
 
 getProduct
@@ -25,9 +25,9 @@ getProduct
 .catch((error) => {
     console.error(error)
 })
-}, [idNum])
+}, [idProd])
 
-//console.log(product)
+console.log(product)
 return (
     <div className= {estilos.itemDetailCont}>
     <ItemDetail product={product}/>

@@ -10,12 +10,12 @@ const App = () => {
 
     return (
         <BrowserRouter>
-        <Navbar/>
+        <Navbar/>        
         <Routes>
         <Route path="/" element={<ItemListContainer saludo= "¡Bienvenidos a mi tienda!"/>}/>
-        <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
-        <Route path='/item/:id' element={<ItemDetailContainer/>}/> 
-        <Route path='/cart' element= {<CartWidget/>}/>               
+        <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
+        <Route path="/detail/:idProd" element={<ItemDetailContainer/>}/> 
+        <Route path="/cart" element= {<CartWidget/>}/>               
         </Routes>
         <Footer/>
         </BrowserRouter>

@@ -1,8 +1,7 @@
 import React from "react";
 import ItemCount from "../ItemCount/itemCount";
-import Item from "../ItemListContainer/Item";
 
-const ItemDetail = ({producto}) => {
+const ItemDetail = ({product}) => {
 
 const onAdd = () => {
     alert("Has agregado un elemento al carrito")
@@ -10,7 +9,11 @@ const onAdd = () => {
 
 return (
     <div>
-        <Item producto={producto}/>
+        <img src={product.img} alt="Imagenes de mis productos" />        
+            <h4>{product.title} </h4>               
+            <h3>{product.description} </h3>
+            <p>${product.price}</p>
+            <p>Stock: {product.stock}</p>
         <ItemCount stock= {7} initial= {0} onAdd= {onAdd} />
     </div> 
 )    
