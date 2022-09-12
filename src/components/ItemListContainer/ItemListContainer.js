@@ -13,7 +13,6 @@ const ItemListContainer = ({ saludo }) => {
    const { categoryId } = useParams();
    console.log(categoryId)
 
-   //const prodFiltrados = categoryId ? products.filter( prod => prod.category === categoryId ) : products
 useEffect(() => {
     //Petición de datos    
    const request = () => new Promise ((resolve, reject) => {

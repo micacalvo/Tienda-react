@@ -11,7 +11,7 @@ return (
             <h3>{producto.description} </h3>
             <p>${producto.price}</p>
             
-            <Link to={`/detail/${producto.id}`}>Ver detalles</Link>
+            <Link to={`/detail/${producto.id}`}><button> Ver detalles </button></Link>
         </div>        
 )
 }

@@ -6,7 +6,7 @@ const [count, setCount] = useState(0)
 
 const sumar = () => {
     //setCount(count + 1)
-    count < stock ? setCount(count + 1) : alert ("El máximo de este producto es 7");
+    count < stock && setCount(count + 1);
 };
 
 const restar = () => {
@@ -17,8 +17,8 @@ const restar = () => {
     <div>
         <button onClick={sumar}>+</button>
         <button onClick={restar}>-</button>
-        <p> {count} </p>
-        <button onClick={onAdd}>Agregar al carrito</button>
+        <p> Cantidad: {count} </p>
+        <button onClick={() => onAdd(count)}>Agregar al carrito</button>
     </div>
     )
 }
