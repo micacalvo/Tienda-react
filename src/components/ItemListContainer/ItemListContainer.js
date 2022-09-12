@@ -10,19 +10,20 @@ const ItemListContainer = ({ saludo }) => {
    const [productos, setProductos] = useState([]);
    //console.log(productos)
    
-   const {categoryId} = useParams();
+   const { categoryId } = useParams();
    console.log(categoryId)
 
+   //const prodFiltrados = categoryId ? products.filter( prod => prod.category === categoryId ) : products
 useEffect(() => {
     //Petición de datos    
-   const request = new Promise ((resolve, reject) => {
+   const request = () => new Promise ((resolve, reject) => {
    
-   const prodFiltrados = products.filter((prod) => prod.category === categoryId ) 
+   const prodFiltrados = categoryId ? products.filter(prod => prod.category === categoryId) : products
 
-   setTimeout(() => {resolve(categoryId ? prodFiltrados : products);}, 2000);
+   setTimeout(() => { resolve(prodFiltrados);}, 2000);
 });
 
-request
+request()
 .then((data) => { 
   setProductos(data)
 })

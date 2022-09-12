@@ -1,8 +1,8 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Item = ({ producto }) => {
-    console.log(producto)
+   console.log(producto)
 
 return (
         <div>
@@ -10,13 +10,9 @@ return (
             <h4>{producto.title} </h4>               
             <h3>{producto.description} </h3>
             <p>${producto.price}</p>
-            <p>Stock: {producto.stock}</p>
             
-            <Link to={`/detail/${producto.id}`}>     
-                <button>Ver detalles</button>
-            </Link>
-        </div>
-        
+            <Link to={`/detail/${producto.id}`}>Ver detalles</Link>
+        </div>        
 )
 }
 export default Item;

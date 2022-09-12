@@ -1,17 +1,17 @@
 import React from 'react';
 import estilos from './itemlistcontainer.module.css';
-import Item from './Item';
+import Item from '../Items/Item';
 
 const ItemList = ({ productos }) => {
-    console.log(productos)
+   console.log(productos)
 
 return (
     <div className={estilos.itemList}> 
     {
-    productos.map((producto) => {
-    return <Item key={producto.id} id={producto.id} title={producto.title} description={producto.description}
-    price={producto.price} stock={producto.stock} category={producto.category} img={producto.img}/>
-})}
+    productos.map(producto => 
+   <Item key={producto.id} 
+         producto={producto} />
+)}
 </div>
 )
 }

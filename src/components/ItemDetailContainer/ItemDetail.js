@@ -1,7 +1,7 @@
 import React from "react";
 import ItemCount from "../ItemCount/itemCount";
 
-const ItemDetail = ({product}) => {
+const ItemDetail = ({ product }) => {
 
 const onAdd = () => {
     alert("Has agregado un elemento al carrito")

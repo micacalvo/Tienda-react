@@ -1,6 +1,6 @@
 const products = [
 {
-    id: 1,
+    id: "1",
     title: "Cambiador de tela", 
     description: "Cambiador con bolsillos",
     price: 200,
@@ -10,7 +10,7 @@ const products = [
 },
 
 {
-    id: 2,
+    id: "2",
     title: "Organizador de cuna", 
     description: "Colgante de tela con bolsillos",
     price: 400,
@@ -20,7 +20,7 @@ const products = [
 },
 
 {
-    id: 3,
+    id: "3",
     title: "Baberos", 
     description: "Baberos",
     price: 100,
