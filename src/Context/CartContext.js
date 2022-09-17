@@ -29,7 +29,7 @@ const isInCart = (id) => {
     return cart.some (product => product.id === id)
 };
 
-//Suma cantidades de cada producto
+//Suma cantidades de cada producto generando cart nuevo
 const sumaCantidad = (product, cantidad) => {
     const cartActualizado = cart.map((prod) => {
         if (prod.id === product.id) {
@@ -59,12 +59,28 @@ const clearCart = () => {
     console.log([...cart])
 };
 
+//Soluciona el problema de stock. Cuantas unidades estan en el carrito?
 const cantidadProd = (id) => {
  const prodCant = cart.find ((prod)=> prod.id === id)
  return prodCant?.cantidad
 }
+
+//Total $ de cada producto (unidades) en cart widget
+const cartUnidad = () => {
+    let acc = 0
+    cart.forEach((prod) => acc = acc + prod.cantidad)
+    return acc;
+}
+
+//Total $ en carrito
+const totalCart = () => {
+    let acc = 0
+    cart.forEach((prod) => acc = acc + (prod.price * prod.cantidad))
+    return acc;
+}
+
 return (
-    <CartContext.Provider value={{cart, addItem, isInCart, removeItem, clearCart, cantidadProd}}>
+    <CartContext.Provider value={{cart, addItem, isInCart, removeItem, clearCart, cantidadProd, totalCart, cartUnidad}}>
         {props.children}
     </CartContext.Provider>
 )

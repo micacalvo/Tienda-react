@@ -1,9 +1,9 @@
 const Footer = () => {
     return (
         <footer>
-            <a href="#">Instagram</a>
+            {/* <a href="#">Instagram</a>
             <a href="#">Facebook</a>
-            <a href="#">WhatsApp</a>
+            <a href="#">WhatsApp</a> */}
         </footer>
     )
 }
