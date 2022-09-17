@@ -1,0 +1,7 @@
+.cart {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 8px;
+    margin: 8px;
+}

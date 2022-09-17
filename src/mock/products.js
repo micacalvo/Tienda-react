@@ -14,7 +14,7 @@ const products = [
     title: "Organizador de cuna", 
     description: "Colgante de tela con bolsillos",
     price: 400,
-    stock: 10,
+    stock: 8,
     category: "organizadores",
     img: 'https://res.cloudinary.com/db6olsj8y/image/upload/v1661800694/Borreguito/OrganizadorCuna_wkqxul.jpg'
 },
@@ -24,7 +24,7 @@ const products = [
     title: "Baberos", 
     description: "Baberos",
     price: 100,
-    stock: 10,
+    stock: 20,
     category: "baberos",
     img: 'https://res.cloudinary.com/db6olsj8y/image/upload/v1661800696/Borreguito/Baberos_wuvbou.jpg'
 },

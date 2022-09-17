@@ -9,12 +9,14 @@ const ItemDetail = ({ product }) => {
 const [cantidad, setCantidad] = useState(0)
 
 //Uso el contexto de CartContext
-const { addItem } = useContext(CartContext)
+const { addItem, cantidadProd } = useContext(CartContext)
 
-const onAdd = (cantAgregada ) => {
- setCantidad(cantAgregada );
- addItem(product, cantAgregada )
-}
+const onAdd = (cantAgregada) => {
+setCantidad(cantAgregada)
+addItem(product, cantAgregada)
+};
+
+const quantityProd = cantidadProd(product.id)
 
 return (
     <div>
@@ -24,7 +26,7 @@ return (
             <p>${product.price}</p>
             <p>Stock: {product.stock}</p>
             
-        { cantidad === 0 ? <ItemCount stock= {product.stock} initial= {0} onAdd= {onAdd}/> 
+        { cantidad === 0 ? <ItemCount stock= {product.stock} initial= {quantityProd} onAdd= {onAdd}/> 
             : <Link to='/cart'><button>Ir al carrito</button></Link>
         }      
     </div> 

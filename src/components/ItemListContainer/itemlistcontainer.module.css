@@ -1,15 +1,16 @@
 .bodyContainer {
     border-bottom: dashed 1px rgb(245, 121, 142);
+    display: flex;
+    justify-content: center;
 }
 
-.bodyContainer h2 {
+.saludo {
     padding: 20px 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: large;
     color:rgb(162, 97, 248);
     font-weight: 500;
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 .itemList {
@@ -17,9 +18,11 @@
     padding: 20px 0;
     display: flex;
     justify-content: space-around;
+    text-align: center;
 }
 
 .itemList img {
     width: 75%;
     justify-items: center;
 }
+

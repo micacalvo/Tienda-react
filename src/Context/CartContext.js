@@ -1,6 +1,6 @@
+import React from "react";
 import { useState } from "react";
 import { createContext } from "react";
-import products from "../mock/products";
 
 export const CartContext = createContext();
 
@@ -12,30 +12,30 @@ const CartProvider = (props) => {
 
 //Funciones
 //1) Agregar al carrito
-const addItem = (product, cantAgregada) => {
-   //console.log(product, cantAgregada)
+const addItem = (product, cantidad) => {
+   //console.log(product, cantidad)
    //Objeto nuevo 
-   //console.log ({...product, cantAgregada}
+   //console.log ({...product, cantidad}
 if (isInCart(product.id)) {
-    sumaCantidad(product, cantAgregada)
+    sumaCantidad(product, cantidad)
     console.log('ya esta en el carrito')
 } else {
-    setCart([...cart, {...product, cantAgregada}])
-}}
-//console.log ([...cart, {...product, cantAgregada}])
+    setCart([...cart, {...product, cantidad}])
+}};
+//console.log ([...cart, {...product, cantidad}])
 
 //Esta en el carrito?
 const isInCart = (id) => {
     return cart.some (product => product.id === id)
-}
+};
 
-//Suma cantidades
-const sumaCantidad = (product, cantAgregada) => {
+//Suma cantidades de cada producto
+const sumaCantidad = (product, cantidad) => {
     const cartActualizado = cart.map((prod) => {
         if (prod.id === product.id) {
             const cartNuevo = {
                 ...prod,
-                cantidad: prod.cantidad + cantAgregada,
+                cantidad: cantidad,
             };
             return cartNuevo;
         } else {
@@ -43,22 +43,28 @@ const sumaCantidad = (product, cantAgregada) => {
         }
 })
 setCart(cartActualizado)
-}
-console.log (cart)
+};
+//console.log (cart)
 
+//Eliminar un producto
 const removeItem = (id) => {
     const productRemove = cart.filter((prod) => prod.id !== id)
     setCart(productRemove)
-}
-console.log(cart)
+};
+//console.log(cart)
 
+//Limpiar todo el carrito
 const clearCart = () => {
     setCart([])
     console.log([...cart])
-}
+};
 
+const cantidadProd = (id) => {
+ const prodCant = cart.find ((prod)=> prod.id === id)
+ return prodCant?.cantidad
+}
 return (
-    <CartContext.Provider value={{cart, addItem, isInCart, removeItem, clearCart}}>
+    <CartContext.Provider value={{cart, addItem, isInCart, removeItem, clearCart, cantidadProd}}>
         {props.children}
     </CartContext.Provider>
 )
