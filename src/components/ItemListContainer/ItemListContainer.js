@@ -1,9 +1,10 @@
 import estilos from './itemlistcontainer.module.css';
-import products from '../../mock/products';
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import RingLoader from "react-spinners/RingLoader";
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import {db} from '../../firebaseConfig';
 
 const ItemListContainer = ({ saludo }) => {
 
@@ -13,34 +14,38 @@ const ItemListContainer = ({ saludo }) => {
 
    const [loading, setLoading] = useState(true)
    
-   const { categoryId } = useParams();
-   console.log(categoryId)
+   const { categoryName } = useParams();
+  console.log(categoryName)
 
 useEffect(() => {
-    //Petición de datos    
-   const request = () => new Promise ((resolve, reject) => {
-   
-   const prodFiltrados = categoryId ? products.filter(prod => prod.category === categoryId) : products
+    //Petición de datos a Firebase
+    
+    const itemCollection = collection(db, "productos");
+    //const q = query(itemCollection, where("category", "==", categoryName))
+    
+    //Filtro de productos por categoría 
+    const prodFiltrados = categoryName ? query(itemCollection, where("category", "==", categoryName)) : itemCollection  
 
-   setTimeout(() => { resolve(prodFiltrados);}, 2000);
-});
-
-request()
-.then((data) => { 
-  setProductos(data)
-  setLoading(false)
+    getDocs(prodFiltrados).then((res) => {
+        //console.log(res)
+        //console.log(res.docs)
+       const products = res.docs.map((prod) => {
+        //console.log(prod.data())
+            return {
+                id: prod.id,
+                ...prod.data(),
+            }
+}); setProductos(products)
 })
+.catch((error) => {
+    console.log(error)
+})
+.finally(() => {
+setLoading(false)
+}) 
+}, [categoryName])
 
-.catch((error)=> {
-    console.error(error)
-});
-
-return () => {
-    setLoading(true);
-}
-}, [categoryId])  
-
-console.log(productos)
+//console.log(products)
 
 return (
 <div style={{display:'flex', justifyContent:'center'}} className={estilos.bodyContainer}> 
@@ -54,3 +59,25 @@ return (
 }
 
 export default ItemListContainer;
+
+//Peticion de datos (de mock)
+/* const request = () => new Promise ((resolve, reject) => {
+   
+const prodFiltrados = categoryId ? products.filter(prod => prod.category === categoryId) : products
+ 
+    setTimeout(() => { resolve(prodFiltrados);}, 2000);
+});
+ 
+request()
+.then((data) => { 
+   setProductos(data)
+   setLoading(false)
+})
+ 
+.catch((error)=> {
+ console.error(error)
+});
+ 
+return () => {
+    setLoading(true);
+} */

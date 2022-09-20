@@ -15,7 +15,7 @@ return (
         <Navbar/>        
           <Routes>
            <Route path="/" element={<ItemListContainer saludo= "¡Bienvenidos a mi tienda!"/>}/>
-           <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
+           <Route path="/category/:categoryName" element={<ItemListContainer/>}/>
            <Route path="/detail/:idProd" element={<ItemDetailContainer/>}/> 
            <Route path="/cart" element= {<Cart/>}/>               
          </Routes>

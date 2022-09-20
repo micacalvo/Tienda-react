@@ -20,8 +20,8 @@ const restar = () => {
 
     return (
     <div>
-        <button onClick={sumar}>+</button>
-        <button onClick={restar}>-</button>
+        <button className='button' onClick={sumar}>+</button>
+        <button className='button' onClick={restar}>-</button>
         <p> Cantidad en carrito: {count} </p>
         <button onClick={() => onAdd(count)}>Agregar al carrito</button>
     </div>
