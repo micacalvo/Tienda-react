@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import Form from "../Form/Form";
 import estilos from './cartstyle.module.css';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Cart = () => {
@@ -14,7 +14,7 @@ return (
     { cart.length === 0 ? 
 <div className={estilos.cartMessa}>
      <h3>El carrito está vacío</h3>
-     <Link to='/'>Home</Link>
+     <NavLink to='/'>Home</NavLink>
 </div>  
 :       
 <div className={estilos.cart}>
