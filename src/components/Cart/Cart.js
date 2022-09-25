@@ -1,13 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
 import Form from "../Form/Form";
 import estilos from './cartstyle.module.css';
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 const Cart = () => {
+const [idCompra, setIdCompra] = useState("");
+const {cart, clearCart, removeItem, totalCart} = useContext(CartContext);
 
-const {cart, clearCart, removeItem, totalCart} = useContext(CartContext)
+const total = totalCart();
+
+const compraId = (id) => {
+setIdCompra(id)};
+
+if (idCompra) {
+    return <h3>Gracias por su compra, su ID es: {idCompra}</h3>
+};
 
 return (
 <div> 
@@ -25,10 +34,10 @@ return (
     <h3>Precio $ {prod.price}</h3>
     <button onClick={()=> removeItem(prod.id)}>Eliminar producto</button></div>
     ))}
-    <h3>Total: $ {totalCart()}</h3>
+    <h3>Total: $ {total}</h3>
     <button onClick={clearCart}>Vaciar carrito</button>
 </div> }
-<Form/>
+<Form cart={cart} total={total} clearCart={clearCart} compraId={compraId}/>
 </div>
 )}
 
