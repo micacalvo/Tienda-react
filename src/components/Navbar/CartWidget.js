@@ -9,7 +9,7 @@ const CartWidget = () => {
 return (
     // Icono del carrito
 <div> 
-<FiShoppingCart style={{size: '30', alignItems:'center'}}/>
+<FiShoppingCart style={{size: '40', alignItems:'center', color:"black"}}/>
 {cartUnidad() === 0 ? '' : cartUnidad()}
 </div>
 )

@@ -42,21 +42,3 @@ return (
 
 export default ItemDetailContainer; 
 
-/* const getProduct = () => new Promise ((resolve, reject) => {
-    const productFind = idProd ? products.find((prod) => prod.id === idProd) : products
-    setTimeout(() => { resolve (productFind);}, 2000);
-});
-
-getProduct()
-.then((data) => {
-    setProduct(data)
-    setLoading(false)
-})
-
-.catch((error) => {
-    console.error(error)
-});
-
-return () => {
-    setLoading(true)
-} */

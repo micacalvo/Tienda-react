@@ -1,7 +1,8 @@
-# Welcome to Borreguitos!
+# Welcome to Little Quokka!
 
 Hi! I'm  Micaela and this is my project with **React Language**.  I´m a fashion designer initializing in  the word of baby accessories.
 
+![](public/TheQuokka.jpg)
 
 # Bookshops used 
 

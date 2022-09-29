@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
+import estilos from "../ItemDetailContainer/ItemDetailContainer.module.css"
 const ItemCount = ({stock, initial = 1, onAdd}) => {
 
 const [count, setCount] = useState(initial)
@@ -19,11 +19,11 @@ const restar = () => {
 };
 
     return (
-    <div>
-        <button className='button' onClick={sumar}>+</button>
-        <button className='button' onClick={restar}>-</button>
+    <div className={estilos.card}>
+        <button className={estilos.boton} onClick={sumar}>+</button>
+        <button className={estilos.boton} onClick={restar}>-</button>
         <p> Cantidad en carrito: {count} </p>
-        <button onClick={() => onAdd(count)}>Agregar al carrito</button>
+        <button className={estilos.boton} onClick={() => onAdd(count)}>Agregar al carrito</button>
     </div>
     )
 }

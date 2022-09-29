@@ -1,17 +1,36 @@
 .itemDetailCont {
-    padding: 20px 0;
+    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.itemDetailCont p {
-    font-size: large;
-    font-weight: 400;
+.itemDetail img {
+    width: 100%;
+    padding: 10px 0;
 }
 
-h4 {
-    font-size: larger;
+.itemDetail h4 {
+    color:brown;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.itemDetail h3 {
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.itemDetail p {
+    font-size: large;
     font-weight: 600;
-    color: blueviolet;
+    color: rgb(122, 23, 23);
+}
+
+.boton {
+    color: black;
+    border-radius: 5px;
+    background-color: white;
+    font-size: medium;
+    padding: 10px;
 }

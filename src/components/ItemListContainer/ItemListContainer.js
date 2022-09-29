@@ -48,7 +48,7 @@ setLoading(false)
 //console.log(products)
 
 return (
-<div style={{display:'flex', justifyContent:'center'}} className={estilos.bodyContainer}> 
+<div style={{display:'grid', placeItems:'center'}} className={estilos.bodyContainer}> 
     { loading ? <><RingLoader color='green' size={100}/></>
     : <> 
        <h2 className={estilos.saludo}>{saludo}</h2>
@@ -60,24 +60,3 @@ return (
 
 export default ItemListContainer;
 
-//Peticion de datos (de mock)
-/* const request = () => new Promise ((resolve, reject) => {
-   
-const prodFiltrados = categoryId ? products.filter(prod => prod.category === categoryId) : products
- 
-    setTimeout(() => { resolve(prodFiltrados);}, 2000);
-});
- 
-request()
-.then((data) => { 
-   setProductos(data)
-   setLoading(false)
-})
- 
-.catch((error)=> {
- console.error(error)
-});
- 
-return () => {
-    setLoading(true);
-} */

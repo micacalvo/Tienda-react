@@ -5,9 +5,10 @@ import {NavLink, Link} from 'react-router-dom';
 
 const Navbar = () => {
     return ( 
-<nav className={estilos.headerContainer}>
-    <Link to='/'><h3>MI BORREGUITO</h3></Link>
-      <ul>
+<nav className={estilos.container}>
+    <Link to='/'><h3 className={estilos.titulo}>Little Quokka</h3></Link>
+    <img className={estilos.img}src="TheQuokka.jpg" alt="Imagen del logo" />
+      <ul className={estilos.headerContainer}>
         <li> 
              <NavLink to='/category/cambiadores'>Cambiadores</NavLink>
         </li>
