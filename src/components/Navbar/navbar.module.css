@@ -27,11 +27,21 @@
     font-size: x-large;
     color:rgb(0, 0, 0);
     font-weight:500;
-    text-decoration: none;
 }
 
 .container img {
     width: 5%;
     display: flex;
     justify-content: right;
+}
+
+.imgCart {
+    padding: 20px;
+    place-items: center;
+    size: 30;
+    color: black;
+}
+
+a {
+    text-decoration: none;
 }

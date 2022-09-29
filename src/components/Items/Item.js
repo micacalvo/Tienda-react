@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import estilos from "../ItemListContainer/itemlistcontainer.module.css"
 
 const Item = ({ producto }) => {
-   console.log(producto)
 
 return (
         <div className={estilos.card}>

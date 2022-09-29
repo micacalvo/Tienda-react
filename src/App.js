@@ -1,5 +1,4 @@
 import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart'
@@ -19,7 +18,6 @@ return (
            <Route path="/detail/:idProd" element={<ItemDetailContainer/>}/> 
            <Route path="/cart" element= {<Cart/>}/>               
          </Routes>
-        <Footer/>
     </BrowserRouter>
 </CartProvider>
     )

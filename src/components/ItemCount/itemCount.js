@@ -1,31 +1,35 @@
-import React, {useState, useEffect} from 'react';
-import estilos from "../ItemDetailContainer/ItemDetailContainer.module.css"
-const ItemCount = ({stock, initial = 1, onAdd}) => {
+import React, { useState, useEffect } from "react";
+import estilos from "../ItemDetailContainer/ItemDetailContainer.module.css";
 
-const [count, setCount] = useState(initial)
+const ItemCount = ({ stock, initial = 1, onAdd }) => {
+  const [count, setCount] = useState(initial);
 
-useEffect(() => {
-    setCount(initial)
-}, [initial]);
-  
+  useEffect(() => {
+    setCount(initial);
+  }, [initial]);
 
-const sumar = () => {
-    //setCount(count + 1)
+  const sumar = () => {
     count < stock && setCount(count + 1);
-};
+  };
 
-const restar = () => {
-    count > initial && setCount(count -1)
-};
+  const restar = () => {
+    count > initial && setCount(count - 1);
+  };
 
-    return (
+  return (
     <div className={estilos.card}>
-        <button className={estilos.boton} onClick={sumar}>+</button>
-        <button className={estilos.boton} onClick={restar}>-</button>
-        <p> Cantidad en carrito: {count} </p>
-        <button className={estilos.boton} onClick={() => onAdd(count)}>Agregar al carrito</button>
+      <button className={estilos.boton} onClick={sumar}>
+        +
+      </button>
+      <button className={estilos.boton} onClick={restar}>
+        -
+      </button>
+      <p> Cantidad en carrito: {count} </p>
+      <button className={estilos.boton} onClick={() => onAdd(count)}>
+        Agregar al carrito
+      </button>
     </div>
-    )
-}
+  );
+};
 
 export default ItemCount;

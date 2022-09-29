@@ -1,23 +1,45 @@
-.cart {
+.totalcart {
     padding: 10px;
     margin: 10px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
+    display: grid;
+    place-items: center;
+}
+
+.totalcart h3 {
+    text-align: center;
+}
+
+.cart {
+    display: grid;
 }
 
 .cartProd {
-    display: inline-flex; 
-    align-items: center;
-    justify-content: space-around;
     border-bottom: 1px solid black;
+    padding: 15px 0px;
+    text-align: center;
+}
+
+.cartProd h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: brown;
+    font-size: large;
+}
+
+.cartProd h3 {
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+    color: black;
+    border-radius: 5px;
+    background-color: white;
+    font-size: medium;
     padding: 10px;
 }
 
 .cartMessa {
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    display: grid;
-    place-items: center;
     padding: 10px;
 }
